@@ -6,11 +6,13 @@ set GLFW_INC="C:\glfw\include"
 set GLFW_LIB="C:\glfw\lib-mingw-w64"
 set GLEW_INC="C:\glew\include"
 set GLEW_LIB="C:\glew\lib\Release\x64"
+set SFML_LIB="C:\SFML\lib"
+set SFML_INC="C:\SFML\include"
+
 
 :: === Common compiler/linker flags ===
-set CFLAGS=-I%GLFW_INC% -I%GLEW_INC%
-set LFLAGS=-L%GLFW_LIB% -L%GLEW_LIB% -lglfw3 -lglew32 -lopengl32 -lgdi32 -luser32 -lglu32
-
+set CFLAGS=-I%GLFW_INC% -I%GLEW_INC% -I%SFML_INC%
+set LFLAGS=-L%GLFW_LIB% -L%GLEW_LIB% -L%SFML_LIB% -lglfw3 -lglew32 -lopengl32 -lgdi32 -luser32 -lglu32
 :: === Count cpp files ===
 set count=0
 for %%f in (*.cpp) do set /a count+=1
